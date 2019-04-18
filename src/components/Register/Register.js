@@ -1,5 +1,7 @@
 import React from 'react';
 
+const fetchUrl = "https://limitless-hollows-74500.herokuapp.com";
+
 class Register extends React.Component {
     constructor(props) {
         super(props);
@@ -24,7 +26,7 @@ class Register extends React.Component {
 
     onSubmitRegister = () => {
         const { registerName, registerEmail, registerPassword } = this.state;
-        fetch('http://localhost:5500/register', {
+        fetch(fetchUrl + '/register', {
             method: 'post',
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({
